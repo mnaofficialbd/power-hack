@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
 	const [data, setData] = useState({
-		fullName: "",
+		name: "",
 		email: "",
 		password: "",
 	});
@@ -18,7 +18,7 @@ const Register = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/users";
+			const url = "http://localhost5000/api/users";
 			const { data: res } = await axios.post(url, data);
 			navigate("/login");
 			console.log(res.message);
@@ -48,10 +48,10 @@ const Register = () => {
 						<input
 							type="text"
 							placeholder="Full Name"
-							name="fullName"
+							name="name"
 							onChange={handleChange}
 							className="input input-bordered w-full max-w-xs mt-2"
-							value={data.fullName}
+							value={data.name}
 							required
 						/>
 						<input

@@ -8,7 +8,7 @@ const ManageBills = () => {
     const [bills, setBills] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/billing-list')
+        fetch('https://localhost:5000/api/billing-list')
             .then(res => res.json())
             .then(data => setBills(data))
     }, [])
